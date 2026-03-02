@@ -25,7 +25,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八" };
+static const char *tags[] = { "一", "二", "三", "四", "他" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -76,18 +76,18 @@ static const char *scrshotcmd[] = { "scrot -s", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
         { MODKEY|ShiftMask,             XK_q,      spawn,          {.v = scrshotcmd } }, 
-	{ MODKEY,                       XK_k,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_u,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_comma,  spawn,          {.v = textcmd } },
 	{ MODKEY,                       XK_period, spawn,          {.v = browsercmd } },
         { MODKEY,                       XK_slash,  spawn,          {.v = filemanagercmd } },
 	//{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_u,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_l,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	//{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	//{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_k,   setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_j,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_y, zoom,           {0} },
 	//{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_f,      killclient,     {0} },
@@ -106,10 +106,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_e,                      1)
 	TAGKEYS(                        XK_i,                      2)
 	TAGKEYS(                        XK_o,                      3)
-	TAGKEYS(                        XK_t,                      4)
-	TAGKEYS(                        XK_s,                      5)
-	TAGKEYS(                        XK_r,                      6)
-	TAGKEYS(                        XK_a,                      7)
+	TAGKEYS(                        XK_apostrophe,                      4)
 	{ MODKEY,                       XK_BackSpace, quit,           {0} },
 };
 
