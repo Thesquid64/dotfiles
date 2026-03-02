@@ -21,7 +21,7 @@ static const char col_steelBlue[]   = "#0099FF";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_dark, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_darkGrey,  col_steelBlue  },
+	[SchemeSel]  = { col_gray4, col_steelBlue,  col_darkGrey  },
 };
 
 /* tagging */
@@ -67,7 +67,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme-str", "window { background-color: #000000; border: 2px; border-color: #0099FF; } mainbox { background-color: #000000; } listview { background-color: #000000; } element { background-color: #000000; text-color: #65D9FF; } element selected { background-color: #262626; text-color: #0099FF; } element-text { background-color: inherit; text-color: inherit; } inputbar { background-color: #000000; text-color: #65D9FF; } prompt { background-color: #000000; text-color: #0099FF; } entry { background-color: #000000; text-color: #65D9FF; }", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
-static const char *textcmd[]  = {"kitty nvim", NULL };
+static const char *textcmd[]  = { "kitty emacs", NULL };
 static const char *filemanagercmd[]  = { "kitty lf", NULL };
 static const char *keybcmd[] = { "/usr/bin/flatpak", "run", "org.cubocore.CoreKeyboard", NULL };
 static const char *scrshotcmd[] = { "scrot -s", NULL };
