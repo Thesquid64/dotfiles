@@ -7,9 +7,9 @@
 
 (defsrc
 
- q w e r t y u i o p lbrc rbrc
- tab a s d f g h j k l ;
- z x c v b n m 
+ tab q w e r t y u i o p lbrc rbrc
+ a s d f g h j k l ; apo
+ z x c v b n m , .
  lsft spc
 
 )
@@ -27,8 +27,6 @@
 (defalias
 
  spc-layer (tap-hold $tap-time $hold-time spc (layer-while-held spc-layer))
-
- tab-layer (tap-hold $tap-time $hold-time tab (layer-while-held tab-layer))
 
  a-mod (tap-hold $tap-time $hold-time a lsft)
 
@@ -50,27 +48,19 @@
 
 (deflayer base
 
- q w e r t y u i o p lbrc rbrc
- @tab-layer @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod @;-mod
- z x c v b n m 
+ tab q w e r t y u i o p lbrc rbrc
+ @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod @;-mod apo
+ z x c v b n m , .
  esc @spc-layer
 
 )
 
 (deflayer spc-layer
 
- q w e r t y u i o ent lbrc rbrc
- tab 1 2 3 4 5 6 7 8 9 0
- z x c v b n m 
+ tab S-9 lbrc S-lbrc S-8 S-7 down right S-rbrc rbrc S-0 lbrc rbrc
+ 1 2 3 4 5 left 6 7 8 9 0
+ S-1 S-2 S-3 S-4 b up S-Equal Minus Equal
+ 
  esc spc
-
-)
-
-(deflayer tab-layer
-
- q w e r t down right i o p lbrc rbrc
- tab a s d f g left j k l ;
- z x c v b up m 
- lsft spc
 
 )
