@@ -7,9 +7,9 @@
 
 (defsrc
 
- tab q w e r t y u i o p lbrc rbrc
+ tab q w e r t y u i o p
  a s d f g h j k l ; apo
- z x c v b n m , .
+ lsgt z x c v b n m , .
  lsft spc
 
 )
@@ -28,6 +28,8 @@
 
  spc-layer (tap-hold $tap-time $hold-time spc (layer-while-held spc-layer))
 
+ lsgt-layer (tap-hold $tap-time $hold-time lsgt (layer-while-held lsgt-layer))
+
  a-mod (tap-hold $tap-time $hold-time a lsft)
 
  s-mod (tap-hold $tap-time $hold-time s lalt)
@@ -44,23 +46,41 @@
 
  ;-mod (tap-hold $tap-time $hold-time ; rsft)
 
+ e_acute AG-k
+
+ e_grave (macro AG-s k)
+
+ e_circ (macro AG-x k)
+
+ a_grave (macro AG-s a)
+
+ u_grave (macro AG-s i)
+
 )
 
 (deflayer base
 
- tab q w e r t y u i o p lbrc rbrc
+ tab q w e r t y u i o p 
  @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod @;-mod apo
- z x c v b n m , .
+ @lsgt-layer z x c v b n m , .
  esc @spc-layer
 
 )
 
 (deflayer spc-layer
 
- tab S-9 lbrc S-lbrc S-8 S-7 down right S-rbrc rbrc S-0 lbrc rbrc
- 1 2 3 4 5 left 6 7 8 9 0
- S-1 S-2 S-3 S-4 b up S-Equal Minus Equal
- 
+ tab S-5 S-9 lbrc S-lbrc S-8 S-7 S-rbrc rbrc S-0 _
+ 1 2 3 4 5 6 7 8 9 0 apo
+ lsgt S-1 S-2 S-3 S-4 _ _ S-Equal Minus Equal
  esc spc
+
+)
+
+(deflayer lsgt-layer
+
+ tab q w e r t down right i o ret
+ a s d f g left @e_acute @e_grave @a_grave @e_circ @u_grave
+ @lsgt-layer z x c v b up m , .
+ lsft spc
 
 )
