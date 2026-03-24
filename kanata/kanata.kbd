@@ -4,14 +4,34 @@
 
 )
 
+(defalias
+
+ modLu tab
+
+ modLc caps
+
+ modLd lsft
+
+ modRu [
+
+ modRc apo
+
+ modRd rsft
+
+ modBar spc
+
+)
+
 
 (defsrc
 
- tab q w e r t y u i o p
- a s d f g h j k l ; apo
- lsgt z x c v b n m , .
- lsft spc
+ esc
 
+ tab	 q w e r t  y u i o p  [
+ caps	 a s d f g  h j k l ;  apo
+ lsft	 z x c v b  n m , . /  rsft
+
+	 spc 
 )
 
 
@@ -20,15 +40,16 @@
  tap-time 150
 
  hold-time 200
-
 )
-
 
 (defalias
 
- spc-layer (tap-hold $tap-time $hold-time spc (layer-while-held spc-layer))
+ modBar-layer (tap-hold $tap-time $hold-time @modBar (layer-while-held modBar-layer))
 
- lsgt-layer (tap-hold $tap-time $hold-time lsgt (layer-while-held lsgt-layer))
+ modLd-layer (tap-hold $tap-time $hold-time @modLd (layer-while-held modLd-layer))
+)
+
+(defalias
 
  a-mod (tap-hold $tap-time $hold-time a lsft)
 
@@ -46,7 +67,7 @@
 
  ;-mod (tap-hold $tap-time $hold-time ; rsft)
 
- e_acute AG-k
+ e_acute AG-k 
 
  e_grave (macro AG-s k)
 
@@ -55,32 +76,37 @@
  a_grave (macro AG-s a)
 
  u_grave (macro AG-s i)
-
 )
 
 (deflayer base
 
- tab q w e r t y u i o p 
- @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod @;-mod apo
- @lsgt-layer z x c v b n m , .
- esc @spc-layer
+ esc
 
+ @modLu	 	 q      w      e      r      t  y u      i      o      p		@modRu
+ @modLc	 	 @a-mod @s-mod @d-mod @f-mod g  h @j-mod @k-mod @l-mod @;-mod		esc
+ @modLd-layer	 z      x      c      v      b  n m      ,      .      /		@modRd
+
+	 @modBar-layer
 )
 
-(deflayer spc-layer
+(deflayer modBar-layer
 
- tab S-5 S-9 lbrc S-lbrc S-8 S-7 S-rbrc rbrc S-0 _
- 1 2 3 4 5 6 7 8 9 0 apo
- lsgt S-1 S-2 S-3 S-4 _ _ S-Equal Minus Equal
- esc spc
+ esc
 
+ @modLu	 S-5 S-9 lbrc S-lbrc S-8 S-7 S-rbrc  rbrc  S-0   _  @modRu
+ @modLc	 1   2   3    4      5   6   7       8     9     0  @modRc
+ @modLd	 S-1 S-2 S-3  S-4    _   _   S-Equal Minus Equal _  @modRd
+
+	 @modBar
 )
 
-(deflayer lsgt-layer
+(deflayer modLd-layer
 
- tab q w e r t down right i o ret
- a s d f g left @e_acute @e_grave @a_grave @e_circ @u_grave
- @lsgt-layer z x c v b up m , .
- lsft spc
+ esc
 
+ @modLu	 q w e r t  down 	right  	 i        o        ret      @modRu
+ @modLc	 a s d f g  left	@e_acute @e_grave @a_grave @e_circ  @u_grave   
+ @modLd	 z x c v b  S-Minus    	m        ,        .        /        @modRd
+
+	 @modBar
 )
