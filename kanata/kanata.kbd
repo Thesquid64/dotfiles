@@ -46,7 +46,7 @@
 
  modBar-layer (tap-hold $tap-time $hold-time @modBar (layer-while-held modBar-layer))
 
- modLd-layer (tap-hold $tap-time $hold-time @modLd (layer-while-held modLd-layer))
+ modLd-layer (tap-hold $tap-time $hold-time esc (layer-while-held modLd-layer))
 )
 
 (defalias
@@ -93,9 +93,9 @@
 
  esc
 
- @modLu	 S-5 S-9 lbrc S-lbrc S-8 S-7 S-rbrc  rbrc  S-0   _  @modRu
- @modLc	 1   2   3    4      5   6   7       8     9     0  @modRc
- @modLd	 S-1 S-2 S-3  S-4    _   _   S-Equal Minus Equal _  @modRd
+ @modLu	 S-5 S-9 lbrc S-lbrc S-8        S-7     S-rbrc  rbrc  S-0   _  @modRu
+ @modLc	 1   2   3    4      5          6       7       8     9     0  @modRc
+ @modLd	 S-1 S-2 S-3  S-4    S-Minus    _       S-Equal Minus Equal _  @modRd
 
 	 @modBar
 )
@@ -106,7 +106,7 @@
 
  @modLu	 q w e r t  down 	right  	 i        o        ret      @modRu
  @modLc	 a s d f g  left	@e_acute @e_grave @a_grave @e_circ  @u_grave   
- @modLd	 z x c v b  S-Minus    	m        ,        .        /        @modRd
+ @modLd	 z x c v b  up   	m        ,        .        /        @modRd
 
 	 @modBar
 )
