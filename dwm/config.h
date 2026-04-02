@@ -46,12 +46,13 @@ static const int refreshrate = 60;  /* refresh rate (per second) for client move
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]",      tile },    /* first entry is default */
+	{ "[]",       tile },    /* first entry is default */
 	{ "|-|",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
 /* key definitions */
+
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -70,7 +71,7 @@ static const char *browsercmd[]  = { "firefox", NULL };
 static const char *textcmd[]  = {"kitty nvim", NULL };
 static const char *filemanagercmd[]  = { "kitty lf", NULL };
 static const char *keybcmd[] = { "/usr/bin/flatpak", "run", "org.cubocore.CoreKeyboard", NULL };
-static const char *scrshotcmd[] = { "scrot -s", NULL };
+static const char *scrshotcmd[] = { "sh", "-c", "maim -s -o --format=png /dev/stdout | xclip -selection clipboard -t image/png -i", NULL};
 
 
 static const Key keys[] = {
@@ -93,7 +94,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_f,      killclient,     {0} },
 	//{ MODKEY,                       XK_p,      setlayout,      {.v = &layouts[0]} },
 	//{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_p,      setlayout,      {.v = &layouts[2]} },
+	//{ MODKEY,                       XK_p,      setlayout,      {.v = &layouts[2]} },
 	//{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	//{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
