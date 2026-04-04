@@ -11,3 +11,7 @@ vim.o.completeopt = "menu,menuone,noselect"
 
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>cd', ':Ex<CR>')
+vim.keymap.set('n', '<leader>l', ':bnext<CR>')
+vim.keymap.set('n', '<leader>h', ':bprevious<CR>')
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
