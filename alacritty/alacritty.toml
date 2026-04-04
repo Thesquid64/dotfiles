@@ -1,0 +1,22 @@
+[window]
+
+opacity = 0.20
+padding = { x = 10, y = 10 }
+
+[font]
+
+normal.family = "ShureTechMonoNerdFont"
+bold.family = "ShureTechMonoNerdFont"
+italic.family = "ShureTechMonoNerdFont"
+bold_italic.family = "ShureTechMonoNerdFont"
+
+size = 12 
+
+[colors.primary]
+
+background = "#000000"
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/dracula.toml"
+]
