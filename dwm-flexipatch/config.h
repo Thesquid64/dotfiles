@@ -527,6 +527,8 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
+	//custom rule
+	RULE(.class = "Onboard", .tags = ~0, .isfloating = 1)
 	//RULE(.class = "Firefox", .tags = 1 << 2)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
@@ -919,6 +921,7 @@ static const char *browsercmd[]  = { "firefox", NULL };
 static const char *textcmd[] = { "alacritty", "-e", "nvim", NULL };
 static const char *filecmd[]  = { "nautilus", NULL };
 static const char *screencmd[]  = { "sh", "-c", "maim -s -o --format=png /dev/stdout | xclip -selection clipboard -t image/png -i", NULL };
+static const char *keybcmd[] = { "onboard", NULL };
 static const char *gazoucmd[] = { "sh", "-c", "maim -s -o --format=png /dev/stdout > /temp/gazou.jpg | gazou | xclip -selection clipboard", NULL };
 
 #if BAR_STATUSCMD_PATCH
@@ -1568,6 +1571,10 @@ static const Button buttons[] = {
 	#if TAB_PATCH
 	{ ClkTabBar,            0,                   Button1,        focuswin,       {0} },
 	#endif // TAB_PATCH
+	// custom keybinds
+	
+	{ ClkWinTitle,          0,              Button1,        spawn,          {.v = keybcmd } },
+
 };
 
 #if DWMC_PATCH

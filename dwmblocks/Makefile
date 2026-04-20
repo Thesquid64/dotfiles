@@ -19,11 +19,16 @@ options:
 dwmblocks: dwmblocks.c blocks.def.h blocks.h
 	${CC} -o dwmblocks dwmblocks.c ${CFLAGS} ${LDFLAGS}
 
+dwmblocksCompatible: dwmblocks.c blocks.def.h blocks.h
+	${CC} -o dwmblocks dwmblocks.c -march=x86-64 ${CFLAGS} ${LDFLAGS}
+
+
 blocks.h:
 	cp blocks.def.h $@
 
 clean:
 	rm -f *.o *.gch dwmblocks
+	rm -f dwmblocksCompatible
 
 install: dwmblocks
 	mkdir -p ${DESTDIR}${PREFIX}/bin

@@ -28,6 +28,9 @@ patches.h:
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
+dwmCompatible: ${OBJ}
+	${CC} -o $@ ${OBJ} -march=x86-64 ${LDFLAGS}
+
 ifdef YAJLLIBS
 dwm-msg:
 	${CC} -o $@ patch/ipc/dwm-msg.c ${LDFLAGS}
@@ -36,6 +39,7 @@ endif
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
 	rm -f dwm-msg
+	rm -f dwmCompatible
 
 dist: clean
 	mkdir -p dwm-${VERSION}
