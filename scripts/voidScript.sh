@@ -1,15 +1,15 @@
 sudo xbps-install -u xbps
 sudo xbps-install -Syu
-sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch qalc dbus rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip 
+sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch libqalculate rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip 
 
 cd
-mkdir scripts git temp
+mkdir scripts git temp .config
 cd git
 git clone https://github.com/Thesquid64/dotfiles.git
 
-mkdir /usr/share/fonts
+sudo mkdir /usr/share/fonts
 cd /usr/share/fonts
-mkdir nerdfonts
+sudo mkdir nerdfonts
 cd nerdfonts
 sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ShareTechMono.zip
 sudo unzip ShareTechMono.zip
@@ -23,11 +23,11 @@ sudo make clean install
 sudo mkdir /usr/local/share/xsessions
 sudo cp ~/git/dotfiles/desktop/dwm.desktop /usr/local/share/xsessions
 cd ~/git/dotfiles/desktop
-cp ~/.xinitrc ~/.bashrc .
+cp ~/.xinitrc ~/.bashrc ~
 
 cp ~/git/dotfiles/scripts/startdwm.sh ~/scripts
 
-cd ~/git/dwmblocks
+cd ~/git/dotfiles/dwmblocks
 sudo make clean install
 
 mkdir ~/.config
