@@ -1,6 +1,6 @@
 sudo xbps-install -u xbps
 sudo xbps-install -Syu
-sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch libqalculate rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip 
+sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch libqalculate rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip setxkbmap
 
 cd
 mkdir scripts git temp .config
@@ -23,7 +23,7 @@ sudo make clean install
 sudo mkdir /usr/local/share/xsessions
 sudo cp ~/git/dotfiles/desktop/dwm.desktop /usr/local/share/xsessions
 cd ~/git/dotfiles/desktop
-cp ~/.xinitrc ~/.bashrc ~
+cp .xinitrc .bashrc ~
 
 cp ~/git/dotfiles/scripts/startdwm.sh ~/scripts
 
