@@ -33,5 +33,18 @@ sudo make clean install
 mkdir ~/.config
 cp -r ~/git/dotfiles/* ~/.config
 
+cd ~/temp
+wget https://github.com/jtroo/kanata/releases/download/v1.11.0/linux-binaries-x64.zip
+unzip linux-binaries-x64.zip
+mv kanata_linux_x64 /usr/bin
+cd ..
+rm linux-binaries-x64.zip
+
+sudo groupadd uinput
+sudo usermod -aG input $USER
+sudo usermod -aG uinput $USER
+sudo modprobe uinput
+
+
 mkdir ~/Pictures
 

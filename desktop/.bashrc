@@ -20,8 +20,3 @@ pfetch
 
 PS1='[\u@\h \W]\$ '
 
-# opencode
-export PATH=/home/maxence/.opencode/bin:$PATH
-
-# OpenClaw Completion
-source "/home/maxence/.openclaw/completions/openclaw.bash"
