@@ -1,6 +1,6 @@
 sudo xbps-install -u xbps
 sudo xbps-install -Syu
-sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch libqalculate rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip setxkbmap
+sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch libqalculate rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip setxkbmap kanata
 
 cd
 mkdir scripts git temp .config
@@ -33,18 +33,9 @@ sudo make clean install
 mkdir ~/.config
 cp -r ~/git/dotfiles/* ~/.config
 
-cd ~/temp
-wget https://github.com/jtroo/kanata/releases/download/v1.11.0/linux-binaries-x64.zip
-unzip linux-binaries-x64.zip
-mv kanata_linux_x64 /usr/bin
-cd ..
-rm linux-binaries-x64.zip
-
-sudo groupadd uinput
-sudo usermod -aG input $USER
-sudo usermod -aG uinput $USER
-sudo modprobe uinput
-
+sudo cp -r ~/git/dotfiles/scripts/kanata /etc/sv
+sudo ln -s /etc/sv/kanata /var/service/
+sudo sv start kanata
 
 mkdir ~/Pictures
 
