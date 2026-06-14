@@ -1,6 +1,6 @@
 sudo xbps-install -u xbps
 sudo xbps-install -Syu
-sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch libqalculate rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip setxkbmap kanata
+sudo xbps-install vim neovim git firefox alacritty picom fzf sddm btop kew feh pfetch libqalculate rofi krita pavucontrol scrcpy onboard virt-manager qemu wget xorg-minimal make gcc libX11-devel libXft-devel libXinerama-devel libXfixes-devel libXi-devel pkg-config dbus unzip setxkbmap kanata mesa-dri
 
 cd
 mkdir scripts git temp .config
